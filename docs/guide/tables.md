@@ -305,4 +305,4 @@ Rows in `table.header()` repeat on every page (for multi-page tables).
 
 學會表格後，下一章來學習數學公式：
 
-- [數學公式 / Math](/guide/math-basics)
+- [數學公式 / Math](./math-basics.html)

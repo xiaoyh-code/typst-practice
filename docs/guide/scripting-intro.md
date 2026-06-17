@@ -385,4 +385,4 @@ Here `.map()` transforms data to rows, and `.flatten()` expands them.
 
 ---
 
-恭喜你完成了所有基礎教程！現在你已經掌握了 Typst 的核心語法。前往 [互動沙盒](/sandbox/) 自由實驗吧！
+恭喜你完成了所有基礎教程！現在你已經掌握了 Typst 的核心語法。前往 [互動沙盒](../sandbox/) 自由實驗吧！

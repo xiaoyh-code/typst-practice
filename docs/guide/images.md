@@ -270,4 +270,4 @@ Use `grid` or `#figure` with `columns` to arrange multiple images:
 
 學會圖片插入後，下一章來學習表格：
 
-- [表格製作 / Tables](/guide/tables)
+- [表格製作 / Tables](./tables.html)

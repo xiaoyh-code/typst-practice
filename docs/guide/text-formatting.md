@@ -309,4 +309,4 @@ This second-level heading is auto-numbered as 1.1
 
 現在你已經掌握文字格式，下一章來學習如何插入圖片：
 
-- [插入圖片 / Images](/guide/images)
+- [插入圖片 / Images](./images.html)

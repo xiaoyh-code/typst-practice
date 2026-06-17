@@ -335,4 +335,4 @@ $ boxed(E = m c^2) $
 
 學會數學公式後，下一章來學習指令碼基礎：
 
-- [指令碼基礎 / Scripting Intro](/guide/scripting-intro)
+- [指令碼基礎 / Scripting Intro](./scripting-intro.html)

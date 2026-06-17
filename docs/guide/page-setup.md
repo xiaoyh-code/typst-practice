@@ -258,4 +258,4 @@ Use `foreground` to add uniform elements to all pages (like watermarks).
 
 學會頁面設置後，下一章來學習文字格式控制：
 
-- [文字與格式 / Text & Formatting](/guide/text-formatting)
+- [文字與格式 / Text & Formatting](./text-formatting.html)

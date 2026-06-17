@@ -106,49 +106,49 @@ Each topic provides:
 <div class="feature-card">
 <h3>1. 快速入門 / Quick Start</h3>
 <p>了解 Typst 的基本概念，撰寫你的第一份文件。</p>
-<a href="/guide/quick-start" class="tag">開始 →</a>
+<a href="./guide/quick-start.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>2. 頁面設置 / Page Setup</h3>
 <p>學習如何設定頁面大小、邊距、方向等基本參數。</p>
-<a href="/guide/page-setup" class="tag">開始 →</a>
+<a href="./guide/page-setup.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>3. 文字格式 / Text Formatting</h3>
 <p>掌握粗體、斜體、字型、顏色等文字樣式。</p>
-<a href="/guide/text-formatting" class="tag">開始 →</a>
+<a href="./guide/text-formatting.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>4. 圖片 / Images</h3>
 <p>插入與調整圖片，設定標題與引用。</p>
-<a href="/guide/images" class="tag">開始 →</a>
+<a href="./guide/images.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>5. 表格 / Tables</h3>
 <p>建立格式化的表格，合併儲存格與自訂樣式。</p>
-<a href="/guide/tables" class="tag">開始 →</a>
+<a href="./guide/tables.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>6. 數學 / Math</h3>
 <p>撰寫美觀的數學公式，從基礎到進階。</p>
-<a href="/guide/math-basics" class="tag">開始 →</a>
+<a href="./guide/math-basics.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>7. 指令碼 / Scripting</h3>
 <p>使用變數、迴圈、條件判斷來讓文件更聰明。</p>
-<a href="/guide/scripting-intro" class="tag">開始 →</a>
+<a href="./guide/scripting-intro.html" class="tag">開始 →</a>
 </div>
 
 <div class="feature-card">
 <h3>8. 沙盒 / Sandbox</h3>
 <p>自由實驗 Typst 程式碼，即時看到結果。</p>
-<a href="/sandbox/" class="tag">開始 →</a>
+<a href="./sandbox/" class="tag">開始 →</a>
 </div>
 
 </div>
