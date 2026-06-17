@@ -30,30 +30,31 @@
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 
-const code = ref(`= Hello, Typst ！
+const code = ref(`= Hello, Typst!
 
-歡迎來到 Typst 練習場 *互動沙盒*！
-Welcome to the Typst Practice *Interactive Sandbox*！
+This is the *interactive sandbox*.
+這是 _互動沙盒_ 。
 
-== 試試看 / Try it
+== Try it / 試試看
 
-- 輸入文字 / Type text
-- 使用 *粗體* 和 _斜體_ / Use *bold* and _italic*
-- 數學公式：$a^2 + b^2 = c^2$
-- 建立表格：
+- Type text here / 在此輸入文字
+- Use *bold* and _italic_ / 使用 *粗體* 和 _斜體_
+- Math: $a^2 + b^2 = c^2$
+
+Here is a simple table:
 
 #figure(
+  caption: [Student Data / 學生資料],
   table(
     columns: 3,
-    table.header([姓名 / Name], [年齡 / Age], [城市 / City]),
-    [小明], [20], [台北],
-    [小華], [22], [台中],
-    [小美], [19], [高雄],
+    table.header([Name], [Age], [City]),
+    [Ming], [20], [Taipei],
+    [Hua], [22], [Taichung],
+    [Mei], [19], [Kaohsiung],
   ),
-  caption: [學生資料表 / Student Data]
 )
 
-試著修改代碼看看！Try editing the code！`);
+Edit the code to see changes! / 修改代碼查看變化！`);
 
 const loading = ref(true);
 const compiled = ref(false);
