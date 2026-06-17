@@ -1,0 +1,19 @@
+{
+  "name": "typst-practice",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "fmt": "prettier . --write"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "vitepress": "^1.6.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
+  "packageManager": "pnpm@10.32.1"
+}
