@@ -60,7 +60,7 @@ Welcome to the Typst Practice tutorial guide! The following chapters will guide 
 
 學習本教程，你不需要安裝任何軟體！你可以：
 
-1. 使用本網站的 **[互動沙盒](../sandbox/)** 直接在瀏覽器中撰寫和預覽 Typst 程式碼
+1. 使用 [Typst 線上編輯器](https://typst.app/play/) 直接在瀏覽器中撰寫和預覽 Typst 程式碼（免費註冊）
 2. 或者使用 [Typst 線上編輯器](https://typst.app/play/)（免費註冊）
 
 當然，如果你想在本地使用 Typst，可以從 [官方下載頁面](https://typst.app/open-source/#download) 下載 Typst CLI。
@@ -71,7 +71,7 @@ Welcome to the Typst Practice tutorial guide! The following chapters will guide 
 
 You don't need to install any software to follow this tutorial! You can:
 
-1. Use the **[Interactive Sandbox](../sandbox/)** on this site to write and preview Typst code directly in your browser
+1. Use the [Typst online editor](https://typst.app/play/) to write and preview Typst code directly in your browser (free sign-up)
 2. Or use the [Typst online editor](https://typst.app/play/) (free sign-up)
 
 Of course, if you want to use Typst locally, you can download the Typst CLI from the [official download page](https://typst.app/open-source/#download).

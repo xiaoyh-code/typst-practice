@@ -6,14 +6,13 @@ export default defineConfig({
   description: "Typst 排版練習網站 — 學習 Typst 語法、頁面設定、插入圖片與表格等基礎知識",
   base: "/typst-practice/",
   head: [["link", { rel: "icon", href: "/favicon.svg" }]],
-  ignoreDeadLinks: ["sandbox-standalone"],
 
   themeConfig: {
     logo: { src: "/logo.svg", width: 24, height: 24 },
     nav: [
       { text: "首頁", link: "/" },
       { text: "教學指南", link: "/guide/" },
-      { text: "互動沙盒", link: "/sandbox/" },
+      { text: "線上練習", link: "/sandbox/" },
     ],
 
     sidebar: {

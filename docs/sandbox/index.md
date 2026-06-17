@@ -9,74 +9,91 @@ layout: page
 <div class="zh-block">
 <span class="lang-label">中文</span>
 
-這是一個**瀏覽器內 Typst 即時編譯器**！無需安裝任何軟體，直接在左側輸入 Typst 程式碼，右側將即時顯示 SVG 向量輸出。
+由於瀏覽器內 WASM 沙盒的限制，我們建議直接使用 **Typst 官方線上編輯器** 來練習。官方編輯器功能完整，支援所有字型、圖片和套件。
 
-**支援的功能**：完整 Typst 語法（文字、標題、列表、表格、數學公式）、即時預覽。
-
-**注意**：沙盒無法載入外部圖片或自訂字型。如需完整功能，請使用 [Typst 線上編輯器](https://typst.app/play/)。
+只需點擊下方按鈕即可開啟，**無需安裝任何軟體**，免費註冊即可使用。
 
 </div>
 <div class="en-block">
 <span class="lang-label">English</span>
 
-This is an **in-browser Typst live compiler**! Type Typst code on the left and see the SVG output on the right in real time, no installation needed.
+Due to browser WASM sandbox limitations, we recommend using the **official Typst online editor** directly. The official editor is fully-featured and supports all fonts, images, and packages.
 
-**Supported**: Full Typst syntax (text, headings, lists, tables, math), real-time preview.
-
-**Note**: The sandbox cannot load external images or custom fonts. For full functionality, use the [Typst Online Editor](https://typst.app/play/).
+Just click the button below to open it — **no software installation needed**, free sign-up to use.
 
 </div>
 </div>
 
 ---
 
-<div class="sandbox-frame-wrapper">
-  <iframe src="./sandbox-standalone.html" class="sandbox-frame" title="Typst Interactive Sandbox"></iframe>
+<div style="text-align: center; margin: 3rem 0;">
+
+<a href="https://typst.app/play/" target="_blank" style="display: inline-block; padding: 14px 40px; background: #239dad; color: white; border-radius: 8px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#1d8a96'" onmouseout="this.style.background='#239dad'">
+  前往 Typst 線上編輯器 / Open Typst Online Editor →
+</a>
+
 </div>
 
 ---
 
-## 沙盒使用技巧 / Sandbox Tips
+## 使用方式 / How to Use
 
 <div class="bilingual-block">
 <div class="zh-block">
 <span class="lang-label">中文</span>
 
-- 編輯器支援基本文字編輯和自動換行
-- 輸入代碼後 **0.4 秒** 自動編譯預覽
-- 可以從教學頁面複製範例代碼到沙盒中實驗
-- 如果 iframe 載入失敗，可以直接在瀏覽器打開獨立的 ./sandbox-standalone.html 頁面
+1. 點擊上方按鈕，打開 [Typst 線上編輯器](https://typst.app/play/)
+2. 在左側編輯器中輸入 Typst 程式碼
+3. 右側將**即時顯示**編譯後的 PDF 預覽
+4. 支援完整功能：字型、圖片、套件、數學公式等
+
+你可以從教學頁面複製範例代碼，貼到編輯器中試驗！
 
 </div>
 <div class="en-block">
 <span class="lang-label">English</span>
 
-- Editor supports basic text editing and word wrap
-- Code auto-compiles and previews after a **0.4 second** delay
-- Copy example code from tutorial pages to experiment in the sandbox
-- If the iframe fails to load, open the standalone ./sandbox-standalone.html page directly
+1. Click the button above to open the [Typst Online Editor](https://typst.app/play/)
+2. Type Typst code in the left editor panel
+3. The right panel will show the compiled PDF **in real time**
+4. Full feature support: fonts, images, packages, math equations, etc.
+
+You can copy example code from tutorial pages and paste them into the editor!
 
 </div>
 </div>
 
-<style scoped>
-.sandbox-frame-wrapper {
-  width: 100%;
-  height: 700px;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
-  overflow: hidden;
-}
+---
 
-.sandbox-frame {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+## 從教學頁面複製範例 / Copy Examples from Tutorials
 
-@media (max-width: 768px) {
-  .sandbox-frame-wrapper {
-    height: 800px;
-  }
-}
-</style>
+<div class="bilingual-block">
+<div class="zh-block">
+<span class="lang-label">中文</span>
+
+瀏覽以下教學章節，將其中的範例代碼複製到 Typst 線上編輯器中試驗：
+
+- [快速入門 / Quick Start](../guide/quick-start.html)
+- [頁面設置 / Page Setup](../guide/page-setup.html)
+- [文字與格式 / Text & Formatting](../guide/text-formatting.html)
+- [插入圖片 / Images](../guide/images.html)
+- [表格製作 / Tables](../guide/tables.html)
+- [數學公式 / Math](../guide/math-basics.html)
+- [指令碼基礎 / Scripting Intro](../guide/scripting-intro.html)
+
+</div>
+<div class="en-block">
+<span class="lang-label">English</span>
+
+Browse these tutorial chapters and copy the example code into the Typst online editor:
+
+- [Quick Start](../guide/quick-start.html)
+- [Page Setup](../guide/page-setup.html)
+- [Text & Formatting](../guide/text-formatting.html)
+- [Images](../guide/images.html)
+- [Tables](../guide/tables.html)
+- [Math Basics](../guide/math-basics.html)
+- [Scripting Intro](../guide/scripting-intro.html)
+
+</div>
+</div>
