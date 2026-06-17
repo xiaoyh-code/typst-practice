@@ -6,6 +6,7 @@ export default defineConfig({
   description: "Typst 排版練習網站 — 學習 Typst 語法、頁面設定、插入圖片與表格等基礎知識",
   base: "/typst-practice/",
   head: [["link", { rel: "icon", href: "/favicon.svg" }]],
+  ignoreDeadLinks: ["sandbox-standalone"],
 
   themeConfig: {
     logo: { src: "/logo.svg", width: 24, height: 24 },

@@ -30,7 +30,9 @@ This is an **in-browser Typst live compiler**! Type Typst code on the left and s
 
 ---
 
-<SandboxEditor />
+<div class="sandbox-frame-wrapper">
+  <iframe src="./sandbox-standalone.html" class="sandbox-frame" title="Typst Interactive Sandbox"></iframe>
+</div>
 
 ---
 
@@ -40,10 +42,10 @@ This is an **in-browser Typst live compiler**! Type Typst code on the left and s
 <div class="zh-block">
 <span class="lang-label">中文</span>
 
-- 編輯器支援 **語法高亮** 和 **自動換行**
+- 編輯器支援基本文字編輯和自動換行
 - 輸入代碼後 **0.4 秒** 自動編譯預覽
 - 可以從教學頁面複製範例代碼到沙盒中實驗
-- SVG 輸出可以右鍵下載
+- 如果 iframe 載入失敗，可以直接在瀏覽器打開獨立的 ./sandbox-standalone.html 頁面
 
 </div>
 <div class="en-block">
@@ -52,7 +54,29 @@ This is an **in-browser Typst live compiler**! Type Typst code on the left and s
 - Editor supports basic text editing and word wrap
 - Code auto-compiles and previews after a **0.4 second** delay
 - Copy example code from tutorial pages to experiment in the sandbox
-- SVG output can be right-clicked to download
+- If the iframe fails to load, open the standalone ./sandbox-standalone.html page directly
 
 </div>
 </div>
+
+<style scoped>
+.sandbox-frame-wrapper {
+  width: 100%;
+  height: 700px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sandbox-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .sandbox-frame-wrapper {
+    height: 800px;
+  }
+}
+</style>

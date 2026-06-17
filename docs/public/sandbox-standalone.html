@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typst 互動沙盒</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "JetBrains Mono", "Fira Code", monospace; height: 100vh; display: flex; flex-direction: column; background: #f8f9fa; }
+  .toolbar { padding: 8px 16px; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+  .status { color: #239dad; }
+  .status.error { color: #e53e3e; }
+  .container { flex: 1; display: flex; min-height: 0; }
+  .pane { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .pane-label { padding: 6px 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; }
+  .editor { flex: 1; padding: 14px; border: none; outline: none; resize: none; font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace; font-size: 13px; line-height: 1.55; tab-size: 2; background: #fff; color: #1a202c; }
+  .editor:focus { background: #fafbfc; }
+  .divider { width: 1px; background: #e2e8f0; }
+  .preview { flex: 1; overflow: auto; background: #fff; padding: 16px; display: flex; align-items: flex-start; justify-content: center; }
+  .preview svg { max-width: 100%; height: auto; }
+  .placeholder { display: flex; align-items: center; justify-content: center; height: 100%; color: #94a3b8; font-size: 14px; text-align: center; line-height: 1.8; }
+  .loading-overlay { display: flex; align-items: center; justify-content: center; height: 100%; color: #64748b; font-size: 14px; }
+  .loading-spinner { width: 20px; height: 20px; border: 2px solid #e2e8f0; border-top-color: #239dad; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 10px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 768px) { .container { flex-direction: column; } .divider { width: 100%; height: 1px; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span>Typst 互動沙盒 / Interactive Sandbox</span>
+  <span id="status" class="status"></span>
+  <span><a href="../" style="color:#239dad;">← 返回 / Back</a></span>
+</div>
+
+<div id="loading" class="loading-overlay">
+  <div class="loading-spinner"></div>
+  載入 Typst 編譯器中... / Loading Typst compiler...
+</div>
+
+<div id="main" class="container" style="display:none;">
+  <div class="pane">
+    <div class="pane-label">編輯器 / Editor</div>
+    <textarea id="input" class="editor" spellcheck="false">= Hello, Typst!
+
+This is the *interactive sandbox*.
+這是 _互動沙盒_ 。
+
+== Try it / 試試看
+
+- Type text here / 在此輸入文字
+- Use *bold* and _italic_ / 使用 *粗體* 和 _斜體_
+- Math: $a^2 + b^2 = c^2$
+
+Here is a simple table:
+
+#figure(
+  caption: [Student Data],
+  table(
+    columns: 3,
+    table.header([Name], [Age], [City]),
+    [Ming], [20], [Taipei],
+    [Hua], [22], [Taichung],
+    [Mei], [19], [Kaohsiung],
+  ),
+)
+
+Edit the code to see changes!</textarea>
+  </div>
+  <div class="divider"></div>
+  <div class="pane">
+    <div class="pane-label">預覽 / Preview</div>
+    <div id="output" class="preview">
+      <div class="placeholder">在左側輸入代碼，即時預覽在此顯示<br>Type code on the left for live preview</div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { $typst } from 'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst.ts@0.6.0/dist/esm/contrib/all-in-one-lite.bundle.js';
+
+$typst.setCompilerInitOptions({
+  getModule: () => 'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-ts-web-compiler@0.6.0/pkg/typst_ts_web_compiler_bg.wasm',
+});
+$typst.setRendererInitOptions({
+  getModule: () => 'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-ts-renderer@0.6.0/pkg/typst_ts_renderer_bg.wasm',
+});
+
+const input = document.getElementById('input');
+const output = document.getElementById('output');
+const status = document.getElementById('status');
+const loading = document.getElementById('loading');
+const main = document.getElementById('main');
+let compileTimer = null;
+
+function compile() {
+  const code = input.value;
+  if (!code.trim()) {
+    output.innerHTML = '<div class="placeholder">在左側輸入代碼，即時預覽在此顯示<br>Type code on the left for live preview</div>';
+    status.textContent = '';
+    status.className = 'status';
+    return;
+  }
+  status.textContent = '編譯中... / Compiling...';
+  status.className = 'status';
+  $typst.svg({ mainContent: code }).then(svg => {
+    output.innerHTML = svg;
+    status.textContent = '編譯完成 / Compiled';
+    status.className = 'status';
+    setTimeout(() => { status.textContent = ''; }, 2000);
+  }).catch(err => {
+    output.innerHTML = '<div class="placeholder" style="color:#e53e3e;"><strong>錯誤 / Error:</strong><br><br>' + String(err).replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div>';
+    status.textContent = '編譯錯誤 / Error';
+    status.className = 'status error';
+  });
+}
+
+try {
+  await $typst.setInitOptions({});
+  loading.style.display = 'none';
+  main.style.display = 'flex';
+  input.addEventListener('input', () => {
+    clearTimeout(compileTimer);
+    compileTimer = setTimeout(compile, 400);
+  });
+  compile();
+} catch (e) {
+  loading.innerHTML = '<div class="placeholder" style="color:#e53e3e;">載入失敗 / Load Failed:<br><br>' + String(e).replace(/</g,'&lt;') + '</div>';
+}
+</script>
+</body>
+</html>
