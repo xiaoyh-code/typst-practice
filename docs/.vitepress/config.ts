@@ -33,7 +33,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/typst/typst" },
+      { icon: "github", link: "https://github.com/xiaoyh-code/typst-practice" },
     ],
 
     footer: {

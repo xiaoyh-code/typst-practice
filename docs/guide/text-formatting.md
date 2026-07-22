@@ -2,6 +2,8 @@
 
 ## 字型選擇 / Font Selection
 
+<FigureImage src="images/guide/text-formatting-01.png" caption-zh="建議截圖：Noto Sans TC 與 Noto Serif TC 字型效果對照" caption-en="Suggested: side-by-side comparison of Noto Sans TC and Noto Serif TC" alt="Font comparison" />
+
 <div class="bilingual-block">
 <div class="zh-block">
 <span class="lang-label">中文</span>
@@ -290,6 +292,8 @@ This second-level heading is auto-numbered as 1.1
 
 </div>
 </div>
+
+<FigureImage src="images/guide/text-formatting-02.png" caption-zh="建議截圖：對齊方式與段落間距（行距、首行縮排）的示範效果" caption-en="Suggested: alignment and paragraph spacing (leading, first-line indent) demo" alt="Alignment and spacing demo" />
 
 ---
 

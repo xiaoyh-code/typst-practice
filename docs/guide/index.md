@@ -60,8 +60,8 @@ Welcome to the Typst Practice tutorial guide! The following chapters will guide 
 
 學習本教程，你不需要安裝任何軟體！你可以：
 
-1. 使用 [Typst 線上編輯器](https://typst.app/play/) 直接在瀏覽器中撰寫和預覽 Typst 程式碼（免費註冊）
-2. 或者使用 [Typst 線上編輯器](https://typst.app/play/)（免費註冊）
+1. 使用本站的 [互動沙盒](../sandbox/)，在瀏覽器內即時編譯、預覽 Typst 代碼
+2. 或者使用 [Typst 官方線上編輯器](https://typst.app/play/)（免費註冊，支援套件與圖片上傳）
 
 當然，如果你想在本地使用 Typst，可以從 [官方下載頁面](https://typst.app/open-source/#download) 下載 Typst CLI。
 
@@ -71,10 +71,20 @@ Welcome to the Typst Practice tutorial guide! The following chapters will guide 
 
 You don't need to install any software to follow this tutorial! You can:
 
-1. Use the [Typst online editor](https://typst.app/play/) to write and preview Typst code directly in your browser (free sign-up)
-2. Or use the [Typst online editor](https://typst.app/play/) (free sign-up)
+1. Use our [interactive sandbox](../sandbox/) to compile and preview Typst code right in your browser
+2. Or use the [official Typst online editor](https://typst.app/play/) (free sign-up, with packages and image upload)
 
 Of course, if you want to use Typst locally, you can download the Typst CLI from the [official download page](https://typst.app/open-source/#download).
 
 </div>
+</div>
+
+## 給老師的話：如何加入教學圖片 / For Teachers: Adding Images
+
+<div class="tip-box">
+
+每個章節都預留了圖片位（虛線佔位框）。只要把截圖按照 `章節名-序號.png` 的規則命名（例如 `quick-start-01.png`），放到倉庫的 `docs/public/images/guide/` 目錄並 push，網站就會自動顯示圖片，無需修改任何程式碼。詳細命名規則請見該目錄內的 README。
+
+Each chapter has reserved image slots (dashed placeholders). Simply name your screenshots with the pattern `chapter-name-number.png` (e.g. `quick-start-01.png`), place them in the repository's `docs/public/images/guide/` directory and push — the site will display them automatically with no code changes. See the README in that directory for details.
+
 </div>

@@ -115,6 +115,8 @@ Use `width` and `height` parameters to control image size:
 
 ## 使用 figure 建立圖片標題 / Using Figure for Captions
 
+<FigureImage src="images/guide/images-01.png" caption-zh="建議截圖：使用 figure 加上圖說與自動編號的效果" caption-en="Suggested: a figure with caption and automatic numbering" alt="Figure with caption" />
+
 <div class="bilingual-block">
 <div class="zh-block">
 <span class="lang-label">中文</span>
@@ -251,6 +253,8 @@ Use `grid` or `#figure` with `columns` to arrange multiple images:
 
 </div>
 </div>
+
+<FigureImage src="images/guide/images-02.png" caption-zh="建議截圖：使用 grid 排列多張圖片的效果" caption-en="Suggested: multiple images arranged with grid" alt="Multiple image layout" />
 
 ---
 

@@ -2,6 +2,8 @@
 
 ## 設定頁面大小 / Setting Page Size
 
+<FigureImage src="images/guide/page-setup-01.png" caption-zh="建議截圖：不同紙張大小（A4 / A5 / 自訂尺寸）的頁面比較" caption-en="Suggested: comparison of page sizes (A4 / A5 / custom)" alt="Page size comparison" />
+
 <div class="bilingual-block">
 <div class="zh-block">
 <span class="lang-label">中文</span>
@@ -239,6 +241,8 @@ Use `foreground` to add uniform elements to all pages (like watermarks).
 
 </div>
 </div>
+
+<FigureImage src="images/guide/page-setup-02.png" caption-zh="建議截圖：加上頁首、頁尾與頁碼的文件效果" caption-en="Suggested: a document with header, footer and page numbers" alt="Header footer page numbers" />
 
 ---
 

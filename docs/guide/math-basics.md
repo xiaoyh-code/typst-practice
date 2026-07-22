@@ -2,6 +2,8 @@
 
 ## 行內公式與獨立公式 / Inline & Display Math
 
+<FigureImage src="images/guide/math-basics-01.png" caption-zh="建議截圖：行內公式與獨立公式在文件中的實際效果" caption-en="Suggested: inline and display math rendered in a document" alt="Inline and display math" />
+
 <div class="bilingual-block">
 <div class="zh-block">
 <span class="lang-label">中文</span>
@@ -316,6 +318,8 @@ $ boxed(E = m c^2) $
 
 </div>
 </div>
+
+<FigureImage src="images/guide/math-basics-02.png" caption-zh="建議截圖：矩陣與多行對齊公式的排版效果" caption-en="Suggested: matrices and multi-line aligned equations" alt="Matrix and aligned equations" />
 
 ---
 

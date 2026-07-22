@@ -23,7 +23,7 @@ features:
     link: /guide/quick-start
   - icon: 🛠️
     title: 線上練習 / Online Practice
-    details: 連接到 Typst 官方線上編輯器，不需安裝任何軟體即可即時預覽。Link to the official Typst online editor — no installation needed.
+    details: 站內互動沙盒在瀏覽器內即時編譯預覽，附練習抽認卡，不需安裝任何軟體。In-browser sandbox with live preview and practice flash cards — no installation needed.
     link: /sandbox/
   - icon: 📐
     title: 涵蓋基礎 / Covering the Basics
@@ -47,7 +47,7 @@ features:
 - 清晰的語法說明與範例
 - 繁體中文與英文雙語對照
 - 實踐練習題
-- 連結至 Typst 官方線上編輯器練習
+- 站內互動沙盒，即時編譯預覽
 
 </div>
 <div class="en-block">
@@ -59,7 +59,7 @@ Each topic provides:
 - Clear syntax explanations and examples
 - Traditional Chinese and English bilingual content
 - Hands-on practice exercises
-- Link to the official Typst online editor for practice
+- An in-browser interactive sandbox with live preview
 
 </div>
 </div>
@@ -147,7 +147,7 @@ Each topic provides:
 
 <div class="feature-card">
 <h3>8. 沙盒 / Sandbox</h3>
-<p>連接到 Typst 官方線上編輯器進行即時練習。</p>
+<p>在站內沙盒即時編譯練習，還有練習抽認卡。</p>
 <a href="./sandbox/" class="tag">開始 →</a>
 </div>
 
