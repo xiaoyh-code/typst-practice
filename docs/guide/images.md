@@ -1,4 +1,4 @@
-# 插入圖片 / Images
+# 插入多媒體 / Multimedia
 
 ## 基本圖片插入 / Basic Image Insertion
 
@@ -14,8 +14,6 @@
 
 這會以原始尺寸插入圖片。Typst 支援常見格式：JPEG、PNG、GIF、SVG。
 
-**重要**：圖片檔案需要和 `.typ` 文件放在同一個目錄中，或使用相對路徑/絕對路徑。
-
 </div>
 <div class="en-block">
 <span class="lang-label">English</span>
@@ -28,9 +26,23 @@ Use the `#image()` function to insert an image:
 
 This inserts the image at its original size. Typst supports common formats: JPEG, PNG, GIF, SVG.
 
-**Important**: The image file needs to be in the same directory as the `.typ` file, or use a relative/absolute path.
-
 </div>
+</div>
+
+<div class="tip-box">
+
+圖片路徑分兩種：**相對路徑**（如 `images/photo.jpg`，相對於 `.typ` 檔案位置）同**絕對路徑**。Typst 的絕對路徑以 `/` 開頭，**起點是專案根目錄**，不是電腦的檔案系統根目錄：
+
+```typst
+#image("photo.jpg")            // 與 .typ 同目錄
+#image("images/photo.jpg")     // 相對路徑：.typ 旁的 images/ 資料夾
+#image("/assets/photo.jpg")    // 絕對路徑：專案根目錄下的 assets/
+```
+
+Image paths come in two kinds: **relative paths** (like `images/photo.jpg`, relative to the `.typ` file) and **absolute paths**. In Typst, absolute paths start with `/` and are rooted at the **project root**, not your computer's filesystem root.
+
+💡 在網頁版 typst.app 或本站沙盒中，絕對路徑以你上載檔案的專案資料夾為根；單機 CLI 則以編譯時指定的 `--root` 為準（預設是 `.typ` 所在目錄）。
+
 </div>
 
 ## 設定圖片大小 / Setting Image Size
@@ -115,7 +127,7 @@ Use `width` and `height` parameters to control image size:
 
 ## 使用 figure 建立圖片標題 / Using Figure for Captions
 
-<FigureImage src="images/guide/images-01.png" caption-zh="建議截圖：使用 figure 加上圖說與自動編號的效果" caption-en="Suggested: a figure with caption and automatic numbering" alt="Figure with caption" />
+<FigureImage src="images/guide/images-01.png" caption-zh="使用 figure 加上圖說與自動編號的效果" caption-en="A figure with caption and automatic numbering" alt="Figure with caption" />
 
 <div class="bilingual-block">
 <div class="zh-block">
@@ -254,7 +266,111 @@ Use `grid` or `#figure` with `columns` to arrange multiple images:
 </div>
 </div>
 
-<FigureImage src="images/guide/images-02.png" caption-zh="建議截圖：使用 grid 排列多張圖片的效果" caption-en="Suggested: multiple images arranged with grid" alt="Multiple image layout" />
+<FigureImage src="images/guide/images-02.png" caption-zh="使用 grid 排列多張圖片的效果" caption-en=" Multiple images arranged with grid" alt="Multiple image layout" />
+
+## 超連結 / Hyperlinks
+
+<div class="bilingual-block">
+<div class="zh-block">
+<span class="lang-label">中文</span>
+
+用 `#link()` 加入外部連結，括號內是網址，後面方括號是顯示內容：
+
+```typst
+// 基本文字連結
+#link("https://typst.app")[Typst 官方網站]
+
+// 簡寫：直接顯示網址本身
+#link("https://typst.app")
+
+// 讓圖片變成可點擊的連結！
+#link("https://typst.app")[
+  #image("logo.svg", width: 3cm)
+]
+```
+
+把 `#image` 放進 `#link` 的內容區塊，讀者在 PDF 中點擊圖片就會開啟連結。
+
+</div>
+<div class="en-block">
+<span class="lang-label">English</span>
+
+Use `#link()` to add external hyperlinks — URL in parentheses, display content in square brackets:
+
+```typst
+// Basic text link
+#link("https://typst.app")[Typst official website]
+
+// Shorthand: display the URL itself
+#link("https://typst.app")
+
+// Make an image clickable!
+#link("https://typst.app")[
+  #image("logo.svg", width: 3cm)
+]
+```
+
+Put `#image` inside `#link`'s content block, and readers can click the image in the PDF to open the link.
+
+</div>
+</div>
+
+## 文件內導引 / Internal Navigation
+
+<div class="bilingual-block">
+<div class="zh-block">
+<span class="lang-label">中文</span>
+
+除了外部網址，`#link` 也可以跳到**文件內的位置**——先用 `<標籤>` 標記目標，再連結過去：
+
+```typst
+// 在某處加上標籤
+= 附錄 <appendix>
+
+// 從任何地方跳轉過去
+詳細資料請見 #link(<appendix>)[附錄]。
+```
+
+另外兩種常用的導引方式：
+
+```typst
+// @標籤：引用並自動帶出編號（圖片、表格、章節都適用）
+如 @diagram 所示……
+
+// 目錄：自動列出全文章節導引
+#outline()
+```
+
+在 PDF 輸出中，這些導引連結都可以點擊跳轉，長文件必備！
+
+</div>
+<div class="en-block">
+<span class="lang-label">English</span>
+
+Beyond external URLs, `#link` can also jump to **locations inside the document** — mark the target with a `<label>` first, then link to it:
+
+```typst
+// Add a label somewhere
+= Appendix <appendix>
+
+// Jump to it from anywhere
+See the #link(<appendix>)[appendix] for details.
+```
+
+Two other common navigation tools:
+
+```typst
+// @label: reference with automatic numbering (figures, tables, headings)
+As shown in @diagram …
+
+// Table of contents: automatic document navigation
+#outline()
+```
+
+In PDF output, all these navigation links are clickable — essential for long documents!
+
+</div>
+</div>
 
 ---
 
@@ -267,6 +383,8 @@ Use `grid` or `#figure` with `columns` to arrange multiple images:
 3. 嘗試使用 `fit: "cover"` 和 `fit: "contain"`，觀察差異
 4. 建立一個 2x2 的圖片網格
 5. 將一張圖片旋轉 90 度並置中顯示
+6. 將一張圖片包在 `#link()` 中，做成可點擊的圖片連結
+7. 為其中一章節加上 `<標籤>`，再用 `#link(<標籤>)` 建立跳轉連結
 
 </div>
 

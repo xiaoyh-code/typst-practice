@@ -310,7 +310,7 @@ Show rules are very powerful — you can completely change how an element render
 
 ## 實際案例：生成表格 / Real Example: Generating a Table
 
-<FigureImage src="images/guide/scripting-01.png" caption-zh="建議截圖：用指令碼從資料自動生成成績表格的結果" caption-en="Suggested: a grade table generated from data via scripting" alt="Script-generated table" />
+<FigureImage src="images/guide/scripting-01.png" caption-zh="用指令碼從資料自動生成成績表格的結果" caption-en="A grade table generated from data via scripting" alt="Script-generated table" />
 
 <div class="bilingual-block">
 <div class="zh-block">
@@ -371,7 +371,7 @@ Here `.map()` transforms data to rows, and `.flatten()` expands them.
 </div>
 </div>
 
-<FigureImage src="images/guide/scripting-02.png" caption-zh="建議截圖：使用迴圈與條件判斷自動生成內容的效果" caption-en="Suggested: content generated with loops and conditionals" alt="Loop generated content" />
+<FigureImage src="images/guide/scripting-02.png" caption-zh="使用迴圈與條件判斷自動生成內容的效果" caption-en="Content generated with loops and conditionals" alt="Loop generated content" />
 
 ---
 

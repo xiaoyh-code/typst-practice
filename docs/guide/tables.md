@@ -141,7 +141,7 @@ Common column width settings:
 
 ## 表格樣式 / Table Styling
 
-<FigureImage src="images/guide/tables-01.png" caption-zh="建議截圖：加上填色、格線與對齊設定的樣式表格" caption-en="Suggested: a styled table with fill, strokes and alignment" alt="Styled table" />
+<FigureImage src="images/guide/tables-01.png" caption-zh="加上填色、格線與對齊設定的樣式表格" caption-en="A styled table with fill, strokes and alignment" alt="Styled table" />
 
 <div class="bilingual-block">
 <div class="zh-block">
@@ -212,9 +212,9 @@ More parameters:
 #table(
   columns: 4,
   // 第一行：第一個儲存格跨 2 欄
-  table.cell(colspan: 2)[個人資料], [], [課程], [成績],
-  table.cell(colspan: 2)[小明], [], [數學], [A],
-  table.cell(colspan: 2)[], [], [英文], [B+],
+  table.cell(colspan: 2)[個人資料], [課程], [成績],
+  table.cell(colspan: 2)[小明], [數學], [A],
+  table.cell[15],[Male], [英文], [B+],
 )
 ```
 
@@ -288,7 +288,7 @@ Rows in `table.header()` repeat on every page (for multi-page tables).
 </div>
 </div>
 
-<FigureImage src="images/guide/tables-02.png" caption-zh="建議截圖：使用 colspan 合併儲存格的複雜表頭效果" caption-en="Suggested: a complex header with merged cells (colspan)" alt="Merged cells table" />
+<FigureImage src="images/guide/tables-02.png" caption-zh="使用 colspan 合併儲存格的複雜表頭效果" caption-en="A complex header with merged cells (colspan)" alt="Merged cells table" />
 
 ---
 

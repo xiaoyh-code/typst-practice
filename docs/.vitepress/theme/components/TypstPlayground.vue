@@ -129,7 +129,7 @@ Hello, *Typst*! 這是一段 _斜體_ 文字，這是 *粗體*。
 `,
   },
   {
-    topic: { zh: "插入圖片", en: "Images" },
+    topic: { zh: "插入多媒體", en: "Multimedia" },
     question: {
       zh: "插入一張圖片（寬度 30%），並用 figure 加上圖說。",
       en: "Insert an image (30% width) and wrap it in a figure with a caption.",

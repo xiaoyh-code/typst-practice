@@ -2,7 +2,7 @@
 
 ## 字型選擇 / Font Selection
 
-<FigureImage src="images/guide/text-formatting-01.png" caption-zh="建議截圖：Noto Sans TC 與 Noto Serif TC 字型效果對照" caption-en="Suggested: side-by-side comparison of Noto Sans TC and Noto Serif TC" alt="Font comparison" />
+<FigureImage src="images/guide/text-formatting-01.gif" caption-zh="Noto Sans CJK TC 與 Noto Serif CJK TC 字型效果對照" caption-en="Side-by-side comparison of Noto Sans CJK TC and Noto Serif CJK TC" alt="Font comparison" />
 
 <div class="bilingual-block">
 <div class="zh-block">
@@ -293,7 +293,7 @@ This second-level heading is auto-numbered as 1.1
 </div>
 </div>
 
-<FigureImage src="images/guide/text-formatting-02.png" caption-zh="建議截圖：對齊方式與段落間距（行距、首行縮排）的示範效果" caption-en="Suggested: alignment and paragraph spacing (leading, first-line indent) demo" alt="Alignment and spacing demo" />
+<FigureImage src="images/guide/text-formatting-02.png" caption-zh="對齊方式與段落間距（行距、首行縮排）的示範效果" caption-en="Alignment and paragraph spacing (leading, first-line indent) demo" alt="Alignment and spacing demo" />
 
 ---
 
@@ -311,6 +311,6 @@ This second-level heading is auto-numbered as 1.1
 
 ## 下一步 / Next Steps
 
-現在你已經掌握文字格式，下一章來學習如何插入圖片：
+現在你已經掌握文字格式，下一章來學習如何插入多媒體：
 
-- [插入圖片 / Images](./images.html)
+- [插入多媒體 / Multimedia](./images.html)

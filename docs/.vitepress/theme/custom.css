@@ -160,3 +160,54 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Home page: solid background, no translucency */
+.VPHero .image-bg {
+  display: none;
+}
+
+.VPFeatures,
+.VPFeature {
+  background-color: var(--vp-c-bg);
+}
+
+.VPFeature {
+  border: 1px solid var(--vp-c-border);
+}
+
+/* Home page: remove the default divider line above content h2 headings */
+.VPHome .vp-doc h2 {
+  border-top: none;
+}
+
+/* Remove the fixed hairline under the top navbar (shows on scroll and on all subpages) */
+.VPNavBar .divider,
+.VPNavBar .divider-line {
+  display: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+/* Frosted-glass navbar (transparent band so no fake "line" at its bottom edge) */
+:root {
+  --vp-nav-bg-color: transparent;
+}
+
+.dark {
+  --vp-nav-bg-color: transparent;
+}
+
+.VPNavBar {
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+
+/* Remove the 1px border under the site title on doc pages (spans the sidebar width) */
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom-color: transparent !important;
+}
+
+/* Reduce the gap between the navbar and the hero section */
+.VPHero {
+  padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 24px) !important;
+}

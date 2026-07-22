@@ -27,7 +27,7 @@ Welcome to the Typst Practice tutorial guide! The following chapters will guide 
 </div>
 
 <div class="feature-card">
-<h3>插入圖片 / Images</h3>
+<h3>插入多媒體 / Multimedia</h3>
 <p>插入圖片、調整大小、設定標題與對齊。</p>
 <a href="./images.html" class="tag">開始學習 →</a>
 </div>

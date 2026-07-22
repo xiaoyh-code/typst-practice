@@ -2,7 +2,7 @@
 
 ## 設定頁面大小 / Setting Page Size
 
-<FigureImage src="images/guide/page-setup-01.png" caption-zh="建議截圖：不同紙張大小（A4 / A5 / 自訂尺寸）的頁面比較" caption-en="Suggested: comparison of page sizes (A4 / A5 / custom)" alt="Page size comparison" />
+<FigureImage src="images/guide/page-setup-01.gif" caption-zh="不同紙張大小（A4 / A5 / 自訂尺寸）的頁面比較" caption-en="Comparison of page sizes (A4 / A5 / custom)" alt="Page size comparison" />
 
 <div class="bilingual-block">
 <div class="zh-block">
@@ -150,8 +150,14 @@ There are four ways to configure margins:
 // 或完全自訂頁首頁尾
 #set page(
   header: align(right)[我的文件標題],
-  footer: align(center)[第 #counter(page).display() 頁],
-)
+footer: context [
+  *第*
+  #counter(page).display(
+    "1",
+    both: true,
+  )
+  *頁*
+])
 ```
 
 </div>
@@ -169,8 +175,14 @@ You can configure how page numbers are displayed:
 // Or fully customize headers/footers
 #set page(
   header: align(right)[My Document Title],
-  footer: align(center)[Page #counter(page).display()],
-)
+footer: context [
+  *Page*
+  #h(1fr)
+  #counter(page).display(
+    "1/1",
+    both: true,
+  )
+])
 ```
 
 </div>
@@ -242,7 +254,7 @@ Use `foreground` to add uniform elements to all pages (like watermarks).
 </div>
 </div>
 
-<FigureImage src="images/guide/page-setup-02.png" caption-zh="建議截圖：加上頁首、頁尾與頁碼的文件效果" caption-en="Suggested: a document with header, footer and page numbers" alt="Header footer page numbers" />
+<FigureImage src="images/guide/page-setup-02.png" caption-zh="加上頁首、頁尾與頁碼的文件效果" caption-en="A document with header, footer and page numbers" alt="Header footer page numbers" />
 
 ---
 

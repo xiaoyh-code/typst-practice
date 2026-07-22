@@ -27,7 +27,7 @@ features:
     link: /sandbox/
   - icon: 📐
     title: 涵蓋基礎 / Covering the Basics
-    details: 頁面設置、文字格式、插入圖片、表格製作、數學公式、指令碼等基礎主題。Page setup, text formatting, images, tables, math, and scripting.
+    details: 頁面設置、文字格式、插入多媒體、表格製作、數學公式、指令碼等基礎主題。Page setup, text formatting, multimedia, tables, math, and scripting.
     link: /guide/
   - icon: 🎨
     title: 動手練習 / Hands-on Practice
@@ -122,7 +122,7 @@ Each topic provides:
 </div>
 
 <div class="feature-card">
-<h3>4. 圖片 / Images</h3>
+<h3>4. 插入多媒體 / Multimedia</h3>
 <p>插入與調整圖片，設定標題與引用。</p>
 <a href="./guide/images.html" class="tag">開始 →</a>
 </div>
