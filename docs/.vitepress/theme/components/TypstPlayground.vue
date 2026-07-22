@@ -7,7 +7,11 @@ import { withBase } from "vitepress";
  * ------------------------------------------------------------------ */
 const TYPST_TS_VERSION = "0.7.0";
 const CDN = "https://cdn.jsdelivr.net/npm";
-const TYPST_ESM_URL = `${CDN}/@myriaddreamin/typst.ts@${TYPST_TS_VERSION}/dist/esm/index.mjs`;
+// Use jsDelivr's +esm bundle endpoint: the raw dist/esm files contain bare
+// module specifiers (e.g. '@myriaddreamin/typst.ts/contrib/global-renderer',
+// 'typst', 'sync-request-curl') that browsers cannot resolve. +esm rewrites
+// and bundles them into browser-loadable URLs.
+const TYPST_ESM_URL = `${CDN}/@myriaddreamin/typst.ts@${TYPST_TS_VERSION}/+esm`;
 const COMPILER_WASM_URL = `${CDN}/@myriaddreamin/typst-ts-web-compiler@${TYPST_TS_VERSION}/pkg/typst_ts_web_compiler_bg.wasm`;
 const RENDERER_WASM_URL = `${CDN}/@myriaddreamin/typst-ts-renderer@${TYPST_TS_VERSION}/pkg/typst_ts_renderer_bg.wasm`;
 
