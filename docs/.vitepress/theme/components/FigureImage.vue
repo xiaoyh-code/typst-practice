@@ -42,7 +42,6 @@ function closeZoom() {
         :src="resolvedSrc"
         :alt="alt || captionEn || captionZh || fileName"
         :class="{ invisible: !loaded }"
-        loading="lazy"
         @load="onLoad"
         @error="onError"
       />
