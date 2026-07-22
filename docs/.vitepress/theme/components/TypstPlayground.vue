@@ -262,6 +262,20 @@ function applyExample(i: number) {
 
 function parseDiagnostics(raw: string): Diagnostic[] {
   const out: Diagnostic[] = [];
+  // typst.ts rejects with a Rust-debug-formatted list, e.g.
+  // [SourceDiagnostic { severity: Error, span: Span(..), message: "unclosed delimiter", trace: [], hints: ["..."], .. }, ...]
+  const sd = /SourceDiagnostic\s*\{[^}]*?severity:\s*(\w+)[^}]*?message:\s*"((?:[^"\\]|\\.)*)"[^}]*?hints:\s*\[([^\]]*)\]/gs;
+  let m: RegExpExecArray | null;
+  while ((m = sd.exec(raw)) !== null) {
+    let message = m[2].replace(/\\"/g, '"').replace(/\\n/g, " ");
+    const hints = (m[3].match(/"((?:[^"\\]|\\.)*)"/g) || []).map((h) =>
+      h.slice(1, -1).replace(/\\"/g, '"'),
+    );
+    if (hints.length) message += "（提示 / Hint: " + hints.join("; ") + "）";
+    out.push({ severity: m[1].toLowerCase(), message });
+  }
+  if (out.length > 0) return out;
+
   const lines = raw.split("\n");
   let pending: Diagnostic | null = null;
   for (const ln of lines) {
