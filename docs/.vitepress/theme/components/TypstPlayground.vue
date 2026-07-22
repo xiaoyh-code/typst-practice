@@ -14,6 +14,12 @@ const CDN = "https://cdn.jsdelivr.net/npm";
 const TYPST_ESM_URL = `${CDN}/@myriaddreamin/typst.ts@${TYPST_TS_VERSION}/+esm`;
 const COMPILER_WASM_URL = `${CDN}/@myriaddreamin/typst-ts-web-compiler@${TYPST_TS_VERSION}/pkg/typst_ts_web_compiler_bg.wasm`;
 const RENDERER_WASM_URL = `${CDN}/@myriaddreamin/typst-ts-renderer@${TYPST_TS_VERSION}/pkg/typst_ts_renderer_bg.wasm`;
+// CJK font: typst.ts's default font assets are Latin-only, so Chinese text
+// renders as tofu. Load Noto Sans TC as a single variable font (covers
+// weights 100–900 in one ~10MB file) — Typst falls back to it for CJK glyphs.
+const CJK_FONT_URLS = [
+  "https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/Variable/OTF/Subset/NotoSansTC-VF.otf",
+];
 
 /* ------------------------------------------------------------------ *
  *  Practice flash cards (bilingual)                                   *
@@ -360,7 +366,11 @@ onMounted(async () => {
     const mod = await import(/* @vite-ignore */ TYPST_ESM_URL);
     $typst = mod.$typst;
     try {
-      $typst.setCompilerInitOptions({ getModule: () => COMPILER_WASM_URL });
+      $typst.setCompilerInitOptions({
+        getModule: () => COMPILER_WASM_URL,
+        // Load CJK font(s) into the compiler's font book before first build.
+        beforeBuild: [mod.loadFonts(CJK_FONT_URLS)],
+      });
       $typst.setRendererInitOptions({ getModule: () => RENDERER_WASM_URL });
     } catch {
       /* options already set (HMR / remount) — safe to ignore */
@@ -405,7 +415,7 @@ function onEditorKeydown(e: KeyboardEvent) {
 const statusText = computed(() => {
   switch (status.value) {
     case "loading-engine":
-      return "⏳ 正在載入 Typst 引擎（首次約需 5–15 秒）… / Loading Typst engine…";
+      return "⏳ 正在載入 Typst 引擎及中文字型（首次約需 15–30 秒）… / Loading Typst engine & CJK fonts…";
     case "compiling":
       return "⏳ 編譯中… / Compiling…";
     case "success":
