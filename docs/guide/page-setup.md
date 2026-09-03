@@ -153,7 +153,7 @@ There are four ways to configure margins:
 footer: context [
   *第*
   #counter(page).display(
-    "1",
+    "1/1",
     both: true,
   )
   *頁*
