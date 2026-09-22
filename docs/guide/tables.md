@@ -213,7 +213,8 @@ More parameters:
   columns: 4,
   // 第一行：第一個儲存格跨 2 欄
   table.cell(colspan: 2)[個人資料], [課程], [成績],
-  table.cell(colspan: 2)[小明], [數學], [A],
+  table.cell(colspan: 2,rowspan: 2)[小明], [數學], [A],
+  [],[],
   table.cell[15],[Male], [英文], [B+],
 )
 ```
@@ -231,7 +232,8 @@ Use `colspan` and `rowspan` to merge cells:
   columns: 4,
   // First row: first cell spans 2 columns
   table.cell(colspan: 2)[Personal Info], [], [Course], [Grade],
-  table.cell(colspan: 2)[Ming], [], [Math], [A],
+  table.cell(colspan: 2,rowspan: 2)[Ming], [], [Math], [A],
+  [],[],
   table.cell(colspan: 2)[], [], [English], [B+],
 )
 ```
