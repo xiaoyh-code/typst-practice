@@ -141,7 +141,7 @@ Use `width` and `height` parameters to control image size:
   caption: [
     系統架構圖
   ],
-)
+)<diagram>
 
 如 @diagram 所示，系統包含三個主要模組。
 ```
@@ -169,7 +169,7 @@ Use `width` and `height` parameters to control image size:
   caption: [
     System Architecture Diagram
   ],
-)
+)<diagram>
 
 As shown in @diagram, the system has three main modules.
 ```
