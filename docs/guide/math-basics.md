@@ -296,7 +296,9 @@ $ overline(ABC) $
 $ underline(XYZ) $
 
 // 框
-$ boxed(E = m c^2) $
+#box(stroke: 1pt + black, inset: 5pt)[
+  $ E = m c^2 $
+]
 ```
 
 </div>
@@ -313,7 +315,9 @@ $ overline(ABC) $
 $ underline(XYZ) $
 
 // Box
-$ boxed(E = m c^2) $
+#box(stroke: 1pt + black, inset: 5pt)[
+  $ E = m c^2 $
+]
 ```
 
 </div>
